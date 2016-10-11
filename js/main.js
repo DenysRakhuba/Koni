@@ -59,22 +59,19 @@ $(document).ready(function() {
 var e = $("#contactForm");
     e.submit(function(o) {
         o.preventDefault();
-        var t = $("input:submit", e),
+        var t = $(".message", e),
             a = t.val();
         $.ajax({
             url: "//formspree.io/koni.ukraine@gmail.com",
             method: "POST",
             data: $(this).serialize(),
             dataType: "json",
-            success: function(e) {
-                t.val("Сообщение отправлено"), setTimeout(function() {
-                    t.attr("disabled", !1).val(a)
-                }, 5e3)
+            success: function() {
+              $("#submit-success").fadeIn();
+              $("#contactForm").fadeOut();
             },
-            error: function(e) {
-                t.val("Произошла ошибка, попробуйте пожалуйста еще раз"), setTimeout(function() {
-                    t.attr("disabled", !1).val(a)
-                }, 5e3)
+            error: function() {
+              $("#submit-errors").fadeIn();
             }
         })
     })

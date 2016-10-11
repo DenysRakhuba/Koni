@@ -574,7 +574,9 @@
         </div>
         <div class="col-md-8">
           <p></p>
-          <form  id="contactForm" action="https://formspree.io/info@koni.ukraine.com" method="POST">
+          <form  id="contactForm" action="https://formspree.io/denis.rakhuba@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="koni-ukraine.com" />
+            <input type="hidden" name="_subject" value="Website contact" />
             <div class="row">
               <div class="control-group form-group col-md-6 col-sm-offset-4">
                 <div class="controls">
@@ -598,7 +600,13 @@
                 </div>
               </div>
             </div>
-            <div id="form-messages"></div>
+            <div id="submit-success" class="collapse">
+              Message received! I'll be in touch.
+            </div>
+            <div id="submit-errors" class="collapse">
+              It looks like there was an error submitting the form.
+              Please try again later.
+            </div>
             <div class="row">
               <div class="col-md-2 col-md-offset-6">
                 <button type="submit" class="btn btn-block">Отправить</button>
