@@ -62,13 +62,12 @@ var e = $("#contactForm");
         var t = $(".message", e),
             a = t.val();
         $.ajax({
-            url: "//formspree.io/koni.ukraine@gmail.com",
+            url: "//formspree.io/denis.rakhuba@gmail.com",
             method: "POST",
             data: $(this).serialize(),
             dataType: "json",
             success: function() {
               $("#submit-success").fadeIn();
-              $("#contactForm").fadeOut();
             },
             error: function() {
               $("#submit-errors").fadeIn();
